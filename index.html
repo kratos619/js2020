@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Click me if u can</title>
+<style>
+    #btn {
+        position: absolute;
+    }
+</style>
+</head>
+
+<body>
+    <p>Your Score <span id="score" ></span> </p>
+    <button id="btn" >click me </button>
+    <script>
+
+    (function () {
+        var body= document.querySelector('body');
+        var btn = document.querySelector('#btn');
+        var score = document.querySelector('#score');
+        btn.addEventListener("",function(){
+            const h = Math.floor(Math.random() * window.innerHeight);
+            const w = Math.floor(Math.random() * window.innerWidth);
+            btn.style.top = `${h}px`;
+            btn.style.left = `${w}px`;
+        });
+        function scoreMaker() {
+            let count = 0;
+            return function () {
+                return count += 5;
+            };
+        }
+        let a = scoreMaker();
+        btn.addEventListener("click",function (e) { 
+            score.innerText = a();
+            body.bgColor = "green" 
+        });
+    })();
+    </script>
+</body>
+</html>
