@@ -18,6 +18,9 @@
   },
   "homepage": "https://github.com/kratos619/js2020#readme",
   "bin": {
-    "nls": "index.js"
+    "nls": "./index.js"
+  },
+  "dependencies": {
+    "chalk": "^4.1.0"
   }
 }
