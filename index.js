@@ -7,7 +7,10 @@ const { spawn } = require("child_process");
 program
   .version("0.0.1")
   .argument("[filename]", "Name of the file to Execute")
-  .action(async ({ filename }) => {
+  .argument("[cmd]", "Name of the file to Execute")
+  .action(async ({ filename, cmd }) => {
+
+    
     const name = filename || "index.js";
     try {
       await fs.promises.access(name);
@@ -15,10 +18,9 @@ program
       throw new Error(`could not find the file ${name}`);
     }
 
-    let proc ;
+    let proc;
     const start = debounce(() => {
-      
-      if(proc){
+      if (proc) {
         proc.kill();
       }
       proc = spawn("node", [name], { stdio: "inherit" });
@@ -26,8 +28,8 @@ program
 
     chokidar
       .watch(".")
-      .on("add",  start)
-      .on("change",  start)
-      .on("unlink",  start);
+      .on("add", start)
+      .on("change", start)
+      .on("unlink", start);
   });
 program.parse(process.argv);
