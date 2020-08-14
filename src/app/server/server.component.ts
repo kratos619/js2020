@@ -10,12 +10,19 @@ export class ServerComponent {
     serverId = 10;
     serverStat = 'offline';
     nameChange = '';
-
+    showServerDetails = false;
+    items =[];
+    
+    addNewItem(){
+        this.items.push(this.nameChange)
+    }
     getServerStat(){
         return this.serverStat;
     }
-
+    
     changeServerStat(){
+        this.showServerDetails = !false; // disable patch
+        console.log(this.showServerDetails);
         return this.serverStat = 'online'
     }
 

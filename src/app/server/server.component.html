@@ -8,6 +8,13 @@
 <p>
     {{nameChange}}
 </p>
-<p>
+<p *ngIf="showServerDetails" >
  server  {{serverId}} is {{getServerStat()}} 
 </p>
+<br>
+<button (click) ="addNewItem()" > add </button>
+
+<p *ngFor="let item of items" > 
+    {{item}}
+</p>
+<!-- <p  ></p> -->
