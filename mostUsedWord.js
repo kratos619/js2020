@@ -1,4 +1,3 @@
-const string = `is simply dummy text of printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s`;
 
 function findMostUsedWord(string) {
   if (string == null) {
