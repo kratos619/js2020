@@ -14,13 +14,15 @@ export class AppComponent {
       name: serverData.serverName,
       content: serverData.serverContent
     });
+    console.log(this.serverElements);
   }
-
+  
   onAddBlueprintAdded(bluePrintData: { serverName: string, serverContent: string }) {
     this.serverElements.push({
       type: 'blueprint',
       name: bluePrintData.serverName,
       content: bluePrintData.serverContent
     });
+    console.log(this.serverElements);
   }
 }
