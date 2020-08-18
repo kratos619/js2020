@@ -1,12 +1,16 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
 
 @Component({
     selector: 'app-header',
     templateUrl: 'header.component.html'
 })
 
-export class HeaderComponent implements OnInit {
+export class HeaderComponent{
+    @Output() componentSeleted = new EventEmitter<string>();
     constructor() { }
-
-    ngOnInit() { }
+    loadComponent(component_type : string){
+        console.log(component_type);
+        this.componentSeleted.emit(component_type)
+    }
+    
 }

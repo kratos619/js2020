@@ -8,4 +8,8 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'my-first-app-angular-nine';
   title_new = 'my-first-app-angular-nine';
+  loadedComponent ='recipe'; 
+  componentNavigate(componentName : string){
+    this.loadedComponent = componentName; 
+  }
 }
