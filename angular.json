@@ -120,6 +120,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "my-first-app-angular-nine"
+    }
+  },
+  "defaultProject": "my-first-app-angular-nine",
+  "cli": {
+    "analytics": false
+  }
 }
